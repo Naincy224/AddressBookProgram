@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class ContactFunction {
 
+	
 private static ContactFunction instance;
+	Scanner sc = new Scanner(System.in);
 	
 	private ContactFunction() {}
 	
@@ -52,4 +54,73 @@ private static ContactFunction instance;
 		
 		}
 	}
+	
+	public Contact editContact() {
+		System.out.println("Enter first name of contact to Edit");
+		String name = sc.nextLine();
+		for(Contact contact :contactDetail.contactList) {
+			if(contact.firstName.equals(name)) {
+				System.out.println(contact);
+				System.out.println("Enter what you want to edit \n1.Firstname \n2.Lastname"
+						+ " \n3.Address \n4.City \n5.State \n6.Email \n7.Zip \n8.Phone");
+				int choice = sc.nextInt();
+				
+				switch (choice) {
+				case 1:
+						System.out.println("Enter the new Firstname");
+						String newFirstName = sc.next();
+						contact.firstName = newFirstName;
+					break;
+				
+				case 2:
+					System.out.println("Enter the new Lastname");
+					String newLastName = sc.next();
+					contact.lastName = newLastName;	
+					break;
+					
+				case 3:
+					System.out.println("Enter the new Address");
+					String newAddress = sc.next();
+					contact.address = newAddress;
+					break;
+					
+				case 4:
+					System.out.println("Enter the new City");
+					String newCity = sc.next();
+					contact.city = newCity;
+					break;
+					
+				case 5:
+					System.out.println("Enter the new State");
+					String newState = sc.next();
+					contact.state = newState;
+					break;
+					
+				case 6:
+					System.out.println("Enter the new Email");
+					String newEmail = sc.next();
+					contact.email = newEmail;
+					break;
+					
+				case 7:
+					System.out.println("Enter the new Zip");
+					String newZip = sc.next();
+					contact.zip = newZip;
+					break;
+					
+				case 8:
+					System.out.println("Enter the new Phone");
+					String newPhone = sc.next();
+					contact.mobile = newPhone;
+					break;
+
+				default:
+					break;
+				}
+			return null;	
+			}
+		}
+		return null;
+	}
 }
+
