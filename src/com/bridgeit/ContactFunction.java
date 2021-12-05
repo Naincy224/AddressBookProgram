@@ -122,5 +122,18 @@ private static ContactFunction instance;
 		}
 		return null;
 	}
+	
+	public Contact removeContactByName() {
+		System.out.println("Enter Firstname of Contact to delete");
+		String name = sc.nextLine();
+			for(Contact contacts :contactDetail.contactList) {
+				if(contacts.firstName.equals(name)) {
+					contactDetail.contactList.remove(contacts);
+					return null;
+				}
+			}
+			System.out.println("Contact Not found");
+			return null;
+	}
 }
 

@@ -32,8 +32,13 @@ public class AddressBookMain {
 						contactOperations.editContact();
 						break;
 					}
+					case 4: {
+						ContactFunction contactOperations = ContactFunction.getInstance();
+						contactOperations.removeContactByName();
+						break;
+					}
 				}
-			}while(input != 4);
+			}while(input != 5);
 	}
 
 	}
