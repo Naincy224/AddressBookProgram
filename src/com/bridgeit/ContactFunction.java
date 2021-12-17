@@ -18,7 +18,7 @@ private static ContactFunction instance;
 		return instance;
 	}
 	
-	ContactDetail contactDetail = new ContactDetail();
+	ContactDetail contactDetail =  ContactDetail.getInstance();
 	
 	public void addNewContact() {
 		Scanner sc = new Scanner(System.in);

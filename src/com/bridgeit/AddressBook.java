@@ -2,16 +2,27 @@ package com.bridgeit;
 
 import java.util.Scanner;
 
-public class AddressBookMain {
+public class AddressBook {
 	static int input;
 
-	public static void main(String[] args) {
+	
 		
-		System.out.println("Welcome to address book program");
+private static AddressBook instance;
+	
+	private AddressBook() {}
+	
+	public static AddressBook getInstance() {
+		if(instance == null) {
+			instance = new AddressBook();
+		}
+		return instance;
+	}
+	
+	public void addressBookOperations() {
 
 		do {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter the option you want :\n1. Add Contact\n2. View Contact\n3. Exit");
+			System.out.println("Enter the option you want :\n1. Add Contact\n2. View Contact\n3. Edit Contact\n4. Remove Contact\n5. Exit");
 			input = sc.nextInt();
 		
 		
