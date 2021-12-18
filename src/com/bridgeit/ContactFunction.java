@@ -135,5 +135,16 @@ private static ContactFunction instance;
 			System.out.println("Contact Not found");
 			return null;
 	}
+	
+	public boolean isDuplicate(String firstName, String lastName) {
+		boolean isDuplicate = false;
+		for (int i = 0; i < contactDetail.contactList.size(); i++) {
+			if(contactDetail.contactList.get(i).firstName.equals(firstName)&&contactDetail.contactList.get(i).lastName.equals(lastName)) {
+				isDuplicate = true;
+			}
+		}
+		return isDuplicate;
+	}
+
 }
 
